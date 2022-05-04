@@ -6,19 +6,54 @@
         <link rel="stylesheet" type="text/css" href="https://unpkg.com/augmented-ui@2/augmented-ui.min.css">
         <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;700&display=swap');
+            @import url('https://fonts.googleapis.com/css?family=Orbitron:700&display=swap');
+            body {
+                background: #000;
+            }
             h1 {
-                font-family: 'Rajdhani', sans-serif;
+                font-family: 'Orbitron', sans-serif;
                 font-size: 4em;
-                color: #3eb5f1;
                 margin: 0;
+                color: #fff;
+                text-shadow: 0 0 3px #6cf;
+
             }
 
             h2 {
                 font-weight: 300;
                 font-family: sans-serif;
             }
+            a.discord {
+                 border: none;
+                 color: black;
+                 text-decoration: none;
+                 font-family: 'Orbitron', sans-serif;
+                 text-transform: uppercase;
+             }
+
+             a.discord:hover {
+                 background: lightgreen;
+                 color: green;
+             }
 
             .centered {
                 position: fixed;
@@ -28,9 +63,86 @@
                 text-align: center;
             }
 
-            #ferris {
-                width: 75%;
+            .centered p, .centered h2{
+                font-family: 'Rajdhani', sans-serif;
+                color: #3eb5f1;
             }
+
+            .centered h2 {
+                font-weight: bold;
+            }
+
+            .discord {
+                background: lawngreen;
+                width: 200px;
+                height: 100px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #space, .stars {
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: -99999;
+            }
+
+            .stars {
+            background-image:
+                radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            animation: zoom 5s infinite;
+            opacity: 0;
+            }
+
+            .stars:nth-child(1) {
+            background-position: 50% 50%;
+            animation-delay: 0s;
+            }
+            .stars:nth-child(2) {
+            background-position: 20% 60%;
+            animation-delay: 1s;
+            }
+            .stars:nth-child(3) {
+            background-position: -20% -30%;
+            animation-delay: 2s;
+            }
+            .stars:nth-child(4) {
+            background-position: 40% -80%;
+            animation-delay: 3s;
+            }
+            .stars:nth-child(5) {
+            background-position: -20% 30%;
+            animation-delay: 4s;
+            }
+
+            @keyframes zoom {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+                animation-timing-function: ease-in;
+            }
+            85% {
+                opacity: 1;
+                transform: scale(2.8);
+                animation-timing-function: linear;
+            }
+            100% {
+                opacity: 0;
+                transform: scale(3.5);
+            }
+    }
         </style>
     </head>
     <body>
@@ -38,7 +150,15 @@
             <h1>Cola Hack Night</h1>
             <h2>Columbia, South Carolina's roving creative technology get together.</h2>
             <p>Join our Discord to find out where we'll be meeting next.</p>
-            <a href="#">Join Now!</a>
+            <a class="discord" href="http://google.com" data-augmented-ui="tl-clip tr-clip r-clip-x br-round bl-clip inlay" href="#">Join Now!</a>
+
         </div>
+        <div id="space">
+            <div class="stars"></div>
+            <div class="stars"></div>
+            <div class="stars"></div>
+            <div class="stars"></div>
+            <div class="stars"></div>
+          </div>
     </body>
 </html>
