@@ -4,3 +4,9 @@ type = "webpack"
 workers_dev = true
 site = { bucket = "./public" }
 compatibility_date = "2022-04-30"
+[env.production]
+workers_dev = false
+routes = [
+  "colahack.com/",
+  "colahack.com/*"
+]
