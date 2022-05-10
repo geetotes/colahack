@@ -1,9 +1,10 @@
-account_id = ""
 name = "colahack"
 type = "webpack"
 workers_dev = true
 site = { bucket = "./public" }
 compatibility_date = "2022-04-30"
+zone_id = "21b2a23b4ddb0252de56bce10e0c7bcd"
+account_id = "7926451cd1249e55b7628f53f0146fef"
 [env.production]
 workers_dev = false
 routes = [
